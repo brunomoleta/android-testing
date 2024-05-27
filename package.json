@@ -1,0 +1,14 @@
+{
+  "name": "m-17",
+  "type": "module",
+  "devDependencies": {
+    "@wdio/appium-service": "^8.38.0",
+    "@wdio/cli": "^8.38.0",
+    "@wdio/local-runner": "^8.38.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  },
+  "scripts": {
+    "test": "wdio run ./wdio.conf.js"
+  }
+}
