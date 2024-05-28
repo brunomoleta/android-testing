@@ -12,4 +12,9 @@ export class LoginPage {
 
         await this.helper.getElementId('searchInput')
     }
+    async goRegister(){
+        const register = 'new UiSelector().text("Sign up")'
+        const button = await $(`android=${register}`)
+        await button.click()
+    }
 }
