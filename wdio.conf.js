@@ -1,35 +1,67 @@
+import {driver} from "@wdio/globals";
+
 export const config = {
-    runner: 'local',
-    port: 4723,
-    specs: [
-        './test/specs/**/*.js'
-    ],
+    specs: ["./test/specs/**/*.js"],
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
     ],
     maxInstances: 10,
+    // Sauce Labs
+    // user: 'oauth-brunomoleta-69973',
+    // key: 'e9e4b09f-a027-4696-9168-fa3dc7fdbc55',
+    // hostname: 'ondemand.us-west-1.saucelabs.com',
+    // port: 443,
+    // baseUrl: 'wd/hub',
+    // capabilities: [{
+    //     platformName: 'Android',
+    //     'appium:app': 'storage:filename=ebacshop.aab',
+    //     'appium:deviceName': 'Samsung.*',
+    //     'appium:automationName': 'UiAutomator2',
+    //     'sauce:options': {
+    //         appiumVersion: 'latest',
+    //         build: 'appium-build-e-commerce',
+    //         name: 'ebac-shop-login-e-cadastro',
+    //         deviceOrientation: 'PORTRAIT'
+    //     },
+    //   "appium:disableIdLocatorAutocompletion": true,
+    // }],
+    // Local
+    runner: "local",
+    port: 4723,
+
     capabilities: [{
-        platformName: 'Android',
-        'appium:deviceName': 'Pixel-01',
-        'appium:platformVersion': '5.1',
-        'appium:automationName': 'UiAutomator2',
-        'appium:app': `${process.cwd()}/app/ebacshop.apks`,
-        'appium:appWaitActivity': '.MainActivity',
-        'appium:disableIdLocatorAutocompletion': true
+      platformName: "Android",
+      "appium:deviceName": "Pixel-01",
+      "appium:platformVersion": "5.1",
+      "appium:automationName": "UiAutomator2",
+      "appium:app": `${process.cwd()}/app/ebacshop.apks`,
+      "appium:appWaitActivity": ".MainActivity",
+      "appium:disableIdLocatorAutocompletion": true,
     }],
-    logLevel: 'info',
+
+    logLevel: "info",
     bail: 0,
     waitforTimeout: 10000,
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
-    services: ["appium"],
-    framework: 'mocha',
-    reporters: ['spec'],
+    services: [],
+    framework: "mocha",
+    reporters: [
+        "spec",
+        [
+            "allure",
+            {
+                outputDir: "allure-results",
+                disableWebdriverStepsReporting: true,
+                disableWebdriverScreenshotsReporting: true,
+            },
+        ],
+    ],
     mochaOpts: {
-        ui: 'bdd',
-        timeout: 60000
-    },
+        ui: "bdd",
+        timeout: 60000,
+    }
     /**
      * Gets executed once before all workers get launched.
      * @param {object} config wdio configuration object
@@ -118,7 +150,6 @@ export const config = {
     // afterTest: function(test, context, { error, result, duration, passed, retries }) {
     // },
 
-
     /**
      * Hook that gets executed after the suite has ended
      * @param {object} suite suite details
@@ -180,4 +211,4 @@ export const config = {
      */
     // afterAssertion: function(params) {
     // }
-}
+};
