@@ -8,37 +8,40 @@ export const config = {
     ],
     maxInstances: 10,
     // Sauce Labs
-    // user: 'oauth-brunomoleta-69973',
-    // key: 'e9e4b09f-a027-4696-9168-fa3dc7fdbc55',
-    // hostname: 'ondemand.us-west-1.saucelabs.com',
-    // port: 443,
-    // baseUrl: 'wd/hub',
-    // capabilities: [{
-    //     platformName: 'Android',
-    //     'appium:app': 'storage:filename=ebacshop.aab',
-    //     'appium:deviceName': 'Samsung.*',
-    //     'appium:automationName': 'UiAutomator2',
-    //     'sauce:options': {
-    //         appiumVersion: 'latest',
-    //         build: 'appium-build-e-commerce',
-    //         name: 'ebac-shop-login-e-cadastro',
-    //         deviceOrientation: 'PORTRAIT'
-    //     },
-    //   "appium:disableIdLocatorAutocompletion": true,
-    // }],
-    // Local
-    runner: "local",
-    port: 4723,
-
+    user: 'oauth-brunomoleta-69973',
+    key: 'e9e4b09f-a027-4696-9168-fa3dc7fdbc55',
+    hostname: 'ondemand.us-west-1.saucelabs.com',
+    port: 443,
+    baseUrl: 'wd/hub',
     capabilities: [{
-      platformName: "Android",
-      "appium:deviceName": "Pixel-01",
-      "appium:platformVersion": "5.1",
-      "appium:automationName": "UiAutomator2",
-      "appium:app": `${process.cwd()}/app/ebacshop.apks`,
-      "appium:appWaitActivity": ".MainActivity",
+        platformName: 'Android',
+        'appium:app': 'storage:filename=ebacshop.aab',
+        'appium:deviceName': 'Samsung.*',
+        'appium:automationName': 'UiAutomator2',
+        'sauce:options': {
+            appiumVersion: 'latest',
+            build: 'appium-build-e-commerce',
+            name: 'ebac-shop-login-e-cadastro',
+            deviceOrientation: 'PORTRAIT'
+        },
       "appium:disableIdLocatorAutocompletion": true,
     }],
+    // Fim Sauce Labs
+
+    // Setup Local
+    // runner: "local",
+    // port: 4723,
+    //
+    // capabilities: [{
+    //   platformName: "Android",
+    //   "appium:deviceName": "Pixel-01",
+    //   "appium:platformVersion": "5.1",
+    //   "appium:automationName": "UiAutomator2",
+    //   "appium:app": `${process.cwd()}/app/ebacshop.apks`,
+    //   "appium:appWaitActivity": ".MainActivity",
+    //   "appium:disableIdLocatorAutocompletion": true,
+    // }],
+    // Fim setup Local
 
     logLevel: "info",
     bail: 0,
