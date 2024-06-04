@@ -3,3 +3,5 @@ app
 .idea
 M17 - Tarefa.pdf
 M17 - Testes Mobile-1.pdf
+.env
+*.pdf
