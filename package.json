@@ -14,6 +14,7 @@
   },
   "scripts": {
     "test": "wdio run ./wdio.conf.js",
+    "test:ios": "wdio run ./wdio.ios.conf.js",
     "format": "prettier --write \"*.{ts,js,json,css,md}\"",
     "allure": "npx allure serve"
   },
