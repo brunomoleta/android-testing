@@ -6,7 +6,7 @@ export class BrowsePage {
     }
     async getShoeProduct(){
         await helper.openAccTab("Browse",true)
-        await this.getProduct("productDetails","Womens Wingtip");
+        await (await this.getProduct("productDetails","Womens Wingtip")).click();
 
         await $(`~Womens Wingtip Shoes Handmade Sheepskin Full Brogues Oxfords & Tie Flats`);
     }
