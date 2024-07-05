@@ -13,13 +13,14 @@
     "typescript": "^5.4.5"
   },
   "scripts": {
-    "test": "wdio run ./wdio.conf.js",
-    "test:ios": "wdio run ./wdio.ios.conf.js",
+    "test": "wdio run config/wdio.conf.js",
+    "test:ios": "wdio run config/wdio.ios.conf.js",
     "format": "prettier --write \"*.{ts,js,json,css,md}\"",
     "allure": "npx allure serve"
   },
   "dependencies": {
     "@faker-js/faker": "^8.4.1",
-    "allure-commandline": "^2.29.0"
+    "allure-commandline": "^2.29.0",
+    "dotenv": "^16.4.5"
   }
 }
